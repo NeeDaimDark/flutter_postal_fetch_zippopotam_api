@@ -43,9 +43,12 @@ class _TechTestWidgetState extends State<TechTestWidget> {
 
     try {
       final response = await http.get(url);
+      print(url);
+
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
+        print(data);
         final places = data['places'] as List;
 
         setState(() {
